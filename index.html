@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physical Center | Academia em Cachoeirinha</title>
+<meta name="description" content="Musculação, funcional, natação, hidroginástica, hidroterapia e pilates em Cachoeirinha/RS. Treino individualizado, horário livre e sem taxa de matrícula. Planos a partir de R$99/mês.">
+<link rel="icon" type="image/webp" href="img/logo.webp">
+<meta name="theme-color" content="#0B0C0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Saira+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0C0A; --bg-2:#121410; --line:#262923; --line-2:#363a31;
+  --text:#F2F4EC; --muted:#9A9C93;
+  --lime:#B5E61D; --lime-ink:#0B0C0A; --lime-dim:#7FA312;
+  --aqua:#2ED3AE;
+  --wrap:1180px; --gut:16px;
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --label:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"Barlow",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:400 17px/1.55 var(--body);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+@media (min-width:768px){:root{--gut:32px}}
+
+/* type */
+.eyebrow{font:500 15px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;color:var(--lime);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--lime)}
+.h-sec{font:400 clamp(40px,7vw,76px)/.95 var(--display);text-transform:uppercase;letter-spacing:.005em;margin:18px 0 0}
+.h-sec em{font-style:normal;color:var(--lime)}
+.lead{color:#C9CBC2;font-size:clamp(17px,1.6vw,19px);max-width:56ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--lime);color:var(--lime-ink);text-decoration:none;font:600 18px/1 var(--label);letter-spacing:.06em;text-transform:uppercase;padding:20px 26px 19px;border-radius:2px;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%);transition:background .2s,transform .2s}
+.btn svg{width:22px;height:22px;flex:none}
+.btn:hover{background:#C9F53A;transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-note{font:500 14px/1.4 var(--label);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-top:14px}
+.btn-note b{color:var(--text);font-weight:600}
+
+/* top bar */
+.top{position:absolute;inset:0 0 auto;z-index:5}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo img{height:72px;width:auto}
+
+/* hero */
+.hero{position:relative;padding:clamp(220px,34vh,320px) 0 0;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:24% 35%}
+@media (min-width:761px){.hero-bg img{object-position:center 35%}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,12,10,.92) 0%,rgba(11,12,10,.72) 55%,rgba(11,12,10,.45) 100%),linear-gradient(180deg,rgba(11,12,10,.3) 0%,transparent 30%,transparent 70%,rgba(11,12,10,.9) 100%)}
+@media (max-width:760px){.hero-bg::after{background:linear-gradient(180deg,rgba(11,12,10,.35) 0%,rgba(11,12,10,.55) 18%,rgba(11,12,10,.82) 38%,rgba(11,12,10,.95) 100%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 1px 1px,#ffffff10 1px,transparent 1.4px) 0 0/22px 22px;mask:linear-gradient(180deg,#000 30%,transparent 95%);pointer-events:none}
+.chev{position:absolute;right:-6vw;top:90px;width:min(52vw,640px);opacity:.9;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:40px;padding-bottom:56px}
+@media (min-width:980px){.hero-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);align-items:end;gap:56px;padding-bottom:80px}}
+.hero h1{overflow-wrap:anywhere;font:400 clamp(50px,9.6vw,124px)/.9 var(--display);text-transform:uppercase;margin:22px 0 26px;letter-spacing:.003em}
+.hero h1 .strike{position:relative;color:var(--muted)}
+.hero h1 .hl{color:var(--lime)}
+.hero .lead{margin-bottom:34px}
+.hero .lead strong{color:var(--text);font-weight:600}
+
+.ticket{background:var(--bg-2);border:1px solid var(--line-2);position:relative}
+.ticket-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px dashed var(--line-2);font:500 14px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ticket-head span:last-child{color:var(--lime)}
+.ticket-price{padding:22px 20px 10px;display:flex;align-items:flex-end;gap:10px}
+.ticket-price .from{font:500 15px/1.2 var(--label);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-bottom:12px}
+.ticket-price .val{font:400 88px/.85 var(--display);color:var(--lime)}
+.ticket-price .val small{font-size:.32em;color:var(--text);margin-left:4px}
+.ticket ul{list-style:none;padding:10px 20px 22px}
+.ticket li{display:flex;gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--line);font-weight:500}
+.ticket li:first-child{border-top:0}
+.ticket li::before{content:"";flex:none;width:10px;height:10px;background:var(--lime);clip-path:polygon(0 0,60% 0,100% 50%,60% 100%,0 100%,40% 50%);transform:translateY(1px)}
+
+.ticker{position:relative;z-index:1;background:var(--lime);color:var(--lime-ink);overflow:hidden;white-space:nowrap;border-top:1px solid var(--lime)}
+.ticker-track{display:inline-flex;gap:0;animation:roll 32s linear infinite;font:400 26px/1 var(--display);text-transform:uppercase;padding:14px 0}
+.ticker-track span{padding:0 22px;display:inline-flex;align-items:center;gap:44px}
+.ticker-track span::after{content:"";width:14px;height:14px;background:var(--lime-ink);clip-path:polygon(0 0,60% 0,100% 50%,60% 100%,0 100%,40% 50%)}
+@keyframes roll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}html{scroll-behavior:auto}}
+
+section{padding:96px 0}
+@media (max-width:640px){section{padding:72px 0}}
+
+/* dores */
+.pain-list{margin-top:48px;border-top:1px solid var(--line)}
+.pain{display:grid;grid-template-columns:56px 1fr;gap:6px 20px;padding:28px 0;border-bottom:1px solid var(--line)}
+@media (min-width:860px){.pain{grid-template-columns:90px 1fr 1fr;gap:40px;align-items:start}}
+.pain .n{font:400 44px/1 var(--display);color:var(--line-2);-webkit-text-stroke:1px var(--lime-dim);color:transparent}
+.pain h3{font:600 22px/1.25 var(--body);color:var(--text)}
+.pain h3 q{quotes:"“" "”"}
+.pain p{grid-column:2;color:#C9CBC2}
+@media (min-width:860px){.pain p{grid-column:auto}}
+.pain p b{color:var(--lime);font-weight:600}
+
+/* modalidades */
+.mods{background:var(--bg-2);border-block:1px solid var(--line)}
+.mod-grid{display:grid;margin-top:48px;border:1px solid var(--line);grid-template-columns:1fr}
+@media (min-width:640px){.mod-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.mod-grid{grid-template-columns:repeat(3,1fr)}}
+.mod{padding:30px 26px 32px;border-bottom:1px solid var(--line);position:relative;min-height:190px}
+@media (min-width:640px){.mod{border-right:1px solid var(--line)}}
+.mod .tag{font:500 13px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.mod h3{font:400 38px/1 var(--display);text-transform:uppercase;margin:14px 0 10px}
+.mod p{color:#C9CBC2;font-size:16px}
+.mod:hover h3{color:var(--lime)}
+.facade{display:grid;margin-top:40px;border:1px solid var(--line);background:var(--bg)}
+@media (min-width:860px){.facade{grid-template-columns:1.1fr 1fr}}
+.facade img{width:100%;height:100%;object-fit:cover;min-height:220px;filter:grayscale(1) contrast(1.1) brightness(.9)}
+.facade-copy{padding:28px 26px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.facade-copy h3{font:400 34px/1 var(--display);text-transform:uppercase}
+.facade-copy p{color:#C9CBC2}
+
+/* incluso */
+.incl{display:grid;gap:48px}
+@media (min-width:960px){.incl{grid-template-columns:.9fr 1.1fr;gap:72px}}
+.check{list-style:none;margin-top:6px}
+.check li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-weight:500;font-size:18px}
+.check li svg{flex:none;width:22px;height:22px;color:var(--lime);margin-top:2px}
+.rules{margin-top:28px;padding:20px 22px;border:1px dashed var(--line-2);font-size:15px;color:#C9CBC2}
+.rules b{display:block;font:600 14px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--text);margin-bottom:8px}
+
+/* planos */
+.plans{border-top:1px solid var(--line)}
+.plan-row{display:grid;grid-template-columns:1fr;margin-top:48px;gap:12px}
+@media (min-width:620px){.plan-row{grid-template-columns:1fr 1fr}}
+@media (min-width:1020px){.plan-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}}
+.plan{background:var(--bg-2);border:1px solid var(--line);padding:28px 24px 26px;position:relative;display:flex;flex-direction:column}
+@media (min-width:1020px){.plan{clip-path:polygon(22px 0,100% 0,calc(100% - 22px) 100%,0 100%);padding:34px 34px 30px;border:0}}
+.plan .term{font:600 16px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.plan .term::before{content:"";display:block;width:32px;height:3px;background:var(--lime);margin-bottom:16px}
+.plan .price{font:400 64px/1 var(--display);margin:14px 0 4px;color:var(--lime)}
+.plan .price span{font:500 16px/1 var(--label);color:var(--muted);letter-spacing:.06em;margin-left:4px}
+.plan .save{font-size:15px;color:#C9CBC2;margin-top:auto;padding-top:14px}
+.plan .badge{position:absolute;top:-12px;right:20px;background:var(--text);color:var(--lime-ink);font:600 12px/1 var(--label);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
+@media (min-width:1020px){.plan .badge{top:12px;right:40px}}
+.fine{margin-top:16px;font:500 14px/1.4 var(--label);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* cta meio */
+.mid{background:var(--lime);color:var(--lime-ink);padding:72px 0;position:relative;overflow:hidden}
+.mid .wrap{position:relative;z-index:1;display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.mid .wrap{grid-template-columns:1.4fr auto}}
+.mid h2{font:400 clamp(40px,6.4vw,76px)/.95 var(--display);text-transform:uppercase}
+.mid p{font-weight:500;margin-top:14px;max-width:52ch}
+.mid .btn{background:var(--lime-ink);color:var(--lime)}
+.mid .btn:hover{background:#1d2017}
+.mid .bgchev{position:absolute;right:-140px;bottom:-90px;width:380px;opacity:.1;pointer-events:none}
+
+/* natação */
+.swim{padding-top:0;position:relative}
+.swim-photo{position:relative;height:clamp(340px,42vw,520px);overflow:hidden}
+.swim-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.swim-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,var(--bg) 98%)}
+.swim .eyebrow{color:var(--aqua)}.swim .eyebrow::before{background:var(--aqua)}
+.swim .h-sec em{color:var(--aqua)}
+.swim-head{position:relative;margin-top:-90px;z-index:2}
+.swim-grid{display:grid;gap:40px;margin-top:40px}
+@media (min-width:960px){.swim-grid{grid-template-columns:1fr 1.15fr;gap:64px}}
+.swim .check li svg{color:var(--aqua)}
+.freq{border:1px solid var(--line)}
+.freq-head,.freq-r{display:grid;grid-template-columns:1.2fr 1fr 1fr}
+.freq-head{font:600 13px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:16px 20px;border-bottom:1px solid var(--line)}
+.freq-r{padding:20px;border-bottom:1px solid var(--line);align-items:center}
+.freq-r:last-child{border-bottom:0}
+.freq-r .f{font:400 30px/1 var(--display);text-transform:uppercase}
+.freq-r .f small{display:block;font:500 13px/1.2 var(--label);letter-spacing:.12em;color:var(--muted);margin-top:6px}
+.freq-r .v{font:400 30px/1 var(--display)}
+.freq-r .v.y{color:var(--aqua)}
+.swim .other{border-left-color:var(--aqua)}
+.swim .freq{border-color:#1f3a33}.swim .freq-head,.swim .freq-r{border-color:#1f3a33}
+.freq-r .v small{font:500 13px/1 var(--label);color:var(--muted);margin-left:2px}
+.other{margin-top:20px;padding:20px 22px;background:var(--bg-2);border-left:3px solid var(--lime);font-size:16px;color:#C9CBC2}
+.other b{color:var(--text)}
+
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.faq-grid{display:grid;gap:40px}
+@media (min-width:960px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:72px}}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-weight:600;font-size:19px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 30px/0.8 var(--display);color:var(--lime);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:#C9CBC2;max-width:60ch}
+
+/* final + rodapé */
+.final{background:var(--bg-2);border-top:1px solid var(--line);position:relative;overflow:hidden}
+.final .chev{top:auto;bottom:-40px;right:-120px;opacity:.5}
+.final h2{font:400 clamp(48px,8.6vw,112px)/.9 var(--display);text-transform:uppercase;max-width:12ch;position:relative}
+.final h2 em{font-style:normal;color:var(--lime)}
+.final .lead{margin:24px 0 34px;position:relative}
+.final .cta-wrap{position:relative}
+
+footer{border-top:1px solid var(--line);padding:64px 0 32px;font-size:16px}
+.units{display:grid;gap:20px}
+@media (min-width:860px){.units{grid-template-columns:1fr 1fr}}
+.unit{border:1px solid var(--line);padding:28px 26px}
+.unit h3{font:400 34px/1 var(--display);text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.unit h3::before{content:"";width:14px;height:14px;background:var(--lime);clip-path:polygon(0 0,60% 0,100% 50%,60% 100%,0 100%,40% 50%)}
+.unit address{font-style:normal;color:#C9CBC2;margin:12px 0 18px}
+.unit address a{color:var(--lime);font:500 14px/1 var(--label);letter-spacing:.12em;text-transform:uppercase;display:inline-block;margin-top:10px}
+.hours{width:100%;border-collapse:collapse;margin-bottom:18px}
+.hours th,.hours td{text-align:left;padding:10px 0;border-top:1px solid var(--line);font-weight:500}
+.hours th{color:var(--muted);font:500 15px/1.2 var(--label);letter-spacing:.08em;text-transform:uppercase}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.phones{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:500}
+.phones .wa{white-space:nowrap}
+.phones .br{flex-basis:100%;height:0}
+.phones a{text-decoration:none;border-bottom:1px solid var(--line-2)}
+.phones a:hover{border-color:var(--lime);color:var(--lime)}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.foot-bottom .logo img{height:46px}
+.ig{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font:500 15px/1 var(--label);letter-spacing:.12em;text-transform:uppercase}
+.ig svg{width:22px;height:22px;color:var(--lime)}
+.ig:hover{color:var(--lime)}
+.incl,.swim-grid,.faq-grid,.units,.mid .wrap{grid-template-columns:minmax(0,1fr)}
+@media (min-width:960px){.incl{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}.swim-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}.faq-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+@media (min-width:860px){.units{grid-template-columns:1fr 1fr}}
+@media (min-width:900px){.mid .wrap{grid-template-columns:minmax(0,1.4fr) auto}}
+html{overflow-x:clip}
+@media (max-width:760px){
+ .hero .chev{display:none}
+ .ticket-price .val{font-size:clamp(60px,17vw,88px)}
+ .freq-head,.freq-r{padding-left:14px;padding-right:14px;grid-template-columns:.9fr 1fr 1fr}
+ .freq-r .f,.freq-r .v{font-size:24px}
+ .freq-r .v small{display:block;margin:4px 0 0}
+ .mid .bgchev{display:none}
+ .plan .price{font-size:56px}
+}
+/* tsunami: a água da foto da natação passa por cima da faixa verde */
+.mid{z-index:1;padding-bottom:150px}
+.swim-photo{z-index:3;height:calc(var(--ov,0px) + clamp(340px,42vw,520px));margin-top:calc(-1 * var(--ov,0px));overflow:visible;pointer-events:none}
+.swim-photo::after{display:none}
+.water{position:absolute;inset:0;overflow:hidden}
+.water img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.water::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 0,transparent calc(var(--ov,0px) + 12%),var(--bg) 98%)}
+.swim-head{z-index:4}
+.foam{position:absolute;inset:0;width:100%;height:100%;z-index:2;overflow:visible;display:none}
+.wave-on .foam{display:block}
+.foam path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.foam .sh{stroke:#0B0C0A;stroke-width:34;opacity:.32}
+.foam .glow{stroke:#F2FFFB;stroke-width:18;opacity:.4}
+.foam .crest{stroke:#FFFFFF;stroke-width:5;opacity:.6}
+.foam .line{stroke:#FFFFFF;stroke-width:1.5;opacity:.8}
+.foam circle{fill:#FFFFFF}
+.foam .sh,.foam .glow{display:none}
+/* + nas modalidades e galeria */
+.mod-plus{position:absolute;top:18px;right:18px;width:44px;height:44px;border:1px solid var(--line-2);background:transparent;color:var(--lime);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.mod-plus svg{width:22px;height:22px}
+.mod-plus:hover,.mod-plus:focus-visible{background:var(--lime);color:var(--lime-ink)}
+.mgd[open]>.mod-plus{background:var(--lime);color:var(--lime-ink)}
+.mod-plus svg{transition:transform .25s}
+.mgd[open]>.mod-plus svg{transform:rotate(45deg)}
+.mod .tag{display:block;padding-right:56px;min-height:40px;line-height:40px;margin-top:-12px}
+.mod-grid{grid-template-columns:minmax(0,1fr)}
+@media (min-width:640px){.mod-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1000px){.mod-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:420px){.mod h3{font-size:clamp(30px,9.4vw,38px)}}
+/* galeria dentro do card */
+.mg{margin-top:20px}
+.mgd,.mgd:first-of-type{border:0}
+.mgd>summary.mod-plus{list-style:none;display:grid;padding:0;gap:0;font-size:0;justify-content:normal}
+.mgd>summary.mod-plus::after{content:none;display:none}
+.mgd>summary::-webkit-details-marker{display:none}
+.mg-stage{position:relative;aspect-ratio:4/5;max-height:72vh;width:100%;background:#050604;overflow:hidden}
+.mg-track{height:100%;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;outline:none;-webkit-overflow-scrolling:touch}
+.mg-nav,.mgd>summary,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.mg-track::-webkit-scrollbar{display:none}
+.mg-track.drag{cursor:grabbing;scroll-snap-type:none}
+.mg-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center;scroll-snap-stop:always;user-select:none;-webkit-user-drag:none}
+.mg-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:var(--lime);color:var(--lime-ink);display:grid;place-items:center;cursor:pointer;transition:opacity .2s}
+.mg-nav svg{width:22px;height:22px}
+.mg-nav.prev{left:10px}.mg-nav.next{right:10px}
+.mg-nav:disabled{opacity:0;pointer-events:none}
+@media (min-width:1000px){.mg-stage{aspect-ratio:1/1}}
+.mg-stage.mg-wide{aspect-ratio:3/2}
+.mg-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px}
+.mg-count{font:500 14px/1 var(--label);letter-spacing:.12em;color:var(--lime)}
+.mg-dots{display:flex;gap:6px}
+.mg-dots i{width:18px;height:3px;background:var(--line-2);transition:background .2s,width .2s}
+.mg-dots i.on{background:var(--lime);width:30px}
+.mg-empty{padding:22px 0 4px;border-top:1px dashed var(--line-2);color:var(--muted);font:500 14px/1.4 var(--label)!important;letter-spacing:.1em;text-transform:uppercase}
+/* menu de três tracinhos */
+.navd{position:absolute;top:14px;right:14px;z-index:60;border:0!important}
+.navd .nav-panel{position:fixed;top:76px;right:14px}
+.navd>summary.burger{list-style:none;width:52px;height:52px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:transparent;border:0;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;font-size:0}
+.navd>summary.burger::-webkit-details-marker{display:none}
+.navd>summary.burger::after{content:none!important;display:none!important}
+.burger span{display:block;width:28px;height:2.5px;border-radius:2px;background:var(--lime);box-shadow:0 1px 6px rgba(0,0,0,.6);transition:transform .25s,opacity .2s}
+.navd[open]>.burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.navd[open]>.burger span:nth-child(2){opacity:0}
+.navd[open]>.burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.nav-back{position:fixed;inset:0;background:rgba(5,6,4,.7);z-index:-1}
+.nav-panel{position:absolute;top:62px;right:0;width:min(320px,calc(100vw - 28px));max-height:calc(100vh - 100px);overflow:auto;background:var(--bg-2);border:1px solid var(--line-2);padding:20px 20px 22px;animation:navIn .22s ease-out}
+@keyframes navIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.nav-panel{animation:none}}
+.nav-tag{font:500 13px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.nav-panel ul{list-style:none}
+.nav-panel li a{display:block;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--text);font:600 19px/1.2 var(--body);text-transform:none;letter-spacing:0}
+.nav-panel li a:hover,.nav-panel li a:focus-visible{color:var(--lime)}
+.nav-cta{margin-top:18px;width:100%;justify-content:center;font-size:16px;padding:16px 18px}
+.top .wrap{padding-right:84px}
+section[id],footer[id]{scroll-margin-top:12px}
+/* hero com foto do treino acompanhado */
+.hero{padding-top:calc(min(66vh,600px) - 70px)}
+.hero-bg{inset:0 0 auto 0;height:min(66vh,600px)}
+.hero-bg img{object-position:center 22%}
+.hero-bg::after{background:linear-gradient(180deg,rgba(11,12,10,.55) 0%,rgba(11,12,10,0) 22%,rgba(11,12,10,0) 52%,rgba(11,12,10,.85) 82%,var(--bg) 100%)}
+.hero .chev{display:none}
+@media (min-width:980px){
+  .hero{padding-top:150px}
+  .hero-bg{inset:0 0 0 auto;width:min(52vw,760px);height:auto;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}
+  .hero-bg img{position:absolute;top:0;left:90px;width:calc(100% - 20px);height:100%;object-position:center 30%}
+  .hero .ticket-price .val{font-size:68px}
+  .hero-bg::after{background:linear-gradient(90deg,rgba(11,12,10,.35) 0%,rgba(11,12,10,0) 14%),linear-gradient(180deg,rgba(11,12,10,.35) 0%,rgba(11,12,10,0) 25%,rgba(11,12,10,0) 55%,rgba(11,12,10,.88) 100%)}
+  .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .hero-grid>div:first-child{max-width:620px}
+  .hero .ticket{max-width:340px;justify-self:end;margin-right:-10px;background:rgba(18,20,16,.88);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .hero h1{font-size:clamp(56px,6.2vw,96px);overflow-wrap:normal}
+}
+</style>
+</head>
+<body>
+<script>
+/* Fotos das modalidades: listeners ligados direto em cada elemento (o visualizador do app pode bloquear eventos no nível da página) */
+(function(){
+  function W(t){return t.clientWidth||1}
+  function idx(t){return Math.round(t.scrollLeft/W(t))}
+  function setup(box){
+    if(!box||box.getAttribute('data-ok'))return;
+    var t=box.querySelector('.mg-track'),c=box.querySelector('.mg-count'),dots=box.querySelector('.mg-dots'),
+        pv=box.querySelector('.mg-nav.prev'),nx=box.querySelector('.mg-nav.next');
+    if(!t||!c||!dots||!pv||!nx)return;
+    box.setAttribute('data-ok','1');
+    var imgs=t.querySelectorAll('img'),N=imgs.length,anim=0,i;
+    for(i=0;i<N;i++){imgs[i].setAttribute('draggable','false');dots.appendChild(document.createElement('i'))}
+    function upd(){var k=idx(t);c.textContent=(k+1)+' / '+N;pv.disabled=k<=0;nx.disabled=k>=N-1;
+      for(var j=0;j<dots.children.length;j++)dots.children[j].className=j===k?'on':''}
+    function go(k){k=Math.max(0,Math.min(N-1,k));var from=t.scrollLeft,to=k*W(t),d=to-from,t0=0;
+      if(anim)cancelAnimationFrame(anim);
+      if(Math.abs(d)<1){upd();return}
+      t.style.scrollSnapType='none';
+      function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/360),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+        t.scrollLeft=from+d*e;
+        if(p<1)anim=requestAnimationFrame(step);
+        else{anim=0;t.scrollLeft=to;setTimeout(function(){t.style.scrollSnapType='';t.scrollLeft=to;upd()},40)}}
+      anim=requestAnimationFrame(step)}
+    function tap(btn,dir){
+      btn.onclick=function(e){e.preventDefault();e.stopPropagation();go(idx(t)+dir)};
+    }
+    tap(pv,-1);tap(nx,1);
+    var tm=0;t.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(upd,60)});
+    t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx(t)+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(idx(t)-1)}});
+    /* arrastar com mouse (computador) */
+    var dn=false,x0=0,s0=0;
+    t.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;x0=e.clientX;s0=t.scrollLeft;t.classList.add('drag');try{t.setPointerCapture(e.pointerId)}catch(_){}});
+    t.addEventListener('pointermove',function(e){if(dn)t.scrollLeft=s0-(e.clientX-x0)});
+    function up(e){if(!dn)return;dn=false;t.classList.remove('drag');var dx=e.clientX-x0,k=Math.round(s0/W(t));go(Math.abs(dx)>50?k+(dx<0?1:-1):k)}
+    t.addEventListener('pointerup',up);t.addEventListener('pointercancel',up);
+    upd();
+    box._upd=upd;
+  }
+  function bind(){
+    var ds=document.querySelectorAll('.mgd');
+    for(var i=0;i<ds.length;i++)(function(d){
+      if(d.getAttribute('data-ok'))return;d.setAttribute('data-ok','1');
+      var sm=d.querySelector('summary');
+      /* abrir um fecha os outros, mantendo o card na mesma posição da tela */
+      sm.onclick=function(){
+        if(d.open)return;
+        var top0=sm.getBoundingClientRect().top,all=document.querySelectorAll('.mgd');
+        for(var k=0;k<all.length;k++)if(all[k]!==d&&all[k].open)all[k].open=false;
+        /* mantém o card tocado no mesmo lugar da tela; mede de novo a cada passo e só corrige o que faltar
+           (o próprio navegador às vezes já compensa, então nunca soma duas correções) */
+        function fix(){var dy=sm.getBoundingClientRect().top-top0;if(Math.abs(dy)<2)return;
+          var h=document.documentElement,sb=h.style.scrollBehavior;h.style.scrollBehavior='auto';
+          window.scrollTo(0,(window.pageYOffset||h.scrollTop)+dy);h.style.scrollBehavior=sb}
+        fix();requestAnimationFrame(fix);setTimeout(fix,60);setTimeout(fix,180);setTimeout(fix,400);
+        setTimeout(function(){var b=d.querySelector('.mg');setup(b);if(b&&b._upd)b._upd()},30);
+      };
+      if(d.open)setup(d.querySelector('.mg'));
+    })(ds[i]);
+  }
+  window.__mgBind=bind;
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
+  window.addEventListener('load',bind);
+  window.addEventListener('resize',function(){var ts=document.querySelectorAll('.mg-track');for(var i=0;i<ts.length;i++)ts[i].scrollLeft=idx(ts[i])*W(ts[i])});
+})();
+</script>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Physical Center, início"><img src="img/logo.webp" alt="Physical Center" width="440" height="380"></a>
+  </div>
+</header>
+<details class="navd" id="navd">
+  <summary class="burger" aria-label="Abrir menu"><span></span><span></span><span></span></summary>
+  <div class="nav-back" id="nav-back"></div>
+  <nav class="nav-panel" aria-label="Seções do site">
+    <p class="nav-tag">Navegue pelo site</p>
+    <ul>
+        <li><a href="#topo" data-go="topo">Início</a></li>
+        <li><a href="#sobre" data-go="sobre">Por que a Physical</a></li>
+        <li><a href="#modalidades" data-go="modalidades">Modalidades</a></li>
+        <li><a href="#incluso" data-go="incluso">O que está incluso</a></li>
+        <li><a href="#planos" data-go="planos">Planos</a></li>
+        <li><a href="#natacao" data-go="natacao">Natação</a></li>
+        <li><a href="#duvidas" data-go="duvidas">Dúvidas</a></li>
+        <li><a href="#unidades" data-go="unidades">Unidades e horários</a></li>
+    </ul>
+    <a class="btn nav-cta" href="https://wa.me/5551991973755?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Physical%20Center%20e%20quero%20come%C3%A7ar%20a%20treinar.%20Pode%20me%20passar%20os%20detalhes%3F" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </nav>
+</details>
+<script>
+/* Menu: cada link ligado direto no elemento (funciona dentro do app do Claude) */
+(function(){
+  var d=document.getElementById('navd');if(!d)return;
+  function close(){d.open=false}
+  document.getElementById('nav-back').onclick=close;
+  var as=d.querySelectorAll('a[data-go]');
+  for(var i=0;i<as.length;i++)(function(a){
+    a.onclick=function(e){
+      var t=document.getElementById(a.getAttribute('data-go'));if(!t)return;
+      e.preventDefault();close();
+      var y=t.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop);
+      if(a.getAttribute('data-go')==='topo')y=0;
+      try{window.scrollTo({top:y,behavior:'smooth'})}catch(_){window.scrollTo(0,y)}
+    };
+  })(as[i]);
+})();
+</script>
+
+<main id="topo">
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-bg"><img src="img/hero-treino.webp" alt="Professor da Physical Center ajustando a pegada de um aluno no supino" width="736" height="1104" fetchpriority="high" decoding="async"></div>
+  <svg class="chev" viewBox="0 0 400 260" aria-hidden="true" fill="none" stroke="#3a3f33" stroke-width="2"><path d="M10 10 L130 130 L10 250"/><path d="M90 10 L210 130 L90 250"/><path d="M170 10 L290 130 L170 250" stroke="#B5E61D" stroke-width="3"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h1">Chega de <span class="strike">recomeçar</span> toda segunda<span class="hl">.</span></h1>
+      <p class="lead">Se você já pagou academia, ficou perdido entre os aparelhos e largou em três semanas, o problema não era falta de força de vontade. Era treinar sozinho. Na Physical Center <strong>seu treino é individualizado e acompanhado por profissionais de Educação Física</strong>, no horário que cabe na sua rotina.</p>
+      <a class="btn" href="https://wa.me/5551991973755?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Physical%20Center%20e%20quero%20come%C3%A7ar%20a%20treinar.%20Pode%20me%20passar%20os%20detalhes%3F" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+        Quero começar a treinar
+      </a>
+      <p class="btn-note">Atendimento pelo WhatsApp · <b>sem taxa de matrícula</b></p>
+    </div>
+
+    <aside class="ticket" aria-label="Resumo da oferta">
+      <div class="ticket-head"><span>Musculação + funcional</span><span>Plano anual</span></div>
+      <div class="ticket-price"><span class="from">a partir<br>de</span><span class="val">R$99<small>/mês</small></span></div>
+      <ul>
+        <li>Horário livre, sem limite de permanência</li>
+        <li>Sem taxa de matrícula</li>
+        <li>Estacionamento gratuito</li>
+      </ul>
+    </aside>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Musculação</span><span>Funcional</span><span>Natação</span><span>Hidroginástica</span><span>Hidroterapia</span><span>Pilates</span>
+      <span>Musculação</span><span>Funcional</span><span>Natação</span><span>Hidroginástica</span><span>Hidroterapia</span><span>Pilates</span>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section id="sobre" aria-labelledby="h-dores">
+  <div class="wrap">
+    <p class="eyebrow">Você se reconhece?</p>
+    <h2 class="h-sec" id="h-dores">O que faz a gente <em>desistir</em><br>e o que muda aqui</h2>
+    <div class="pain-list">
+      <div class="pain"><span class="n">01</span><h3><q>Entro na academia e não sei o que fazer.</q></h3><p>Seu treino é <b>montado para você</b> e acompanhado por profissionais formados em Educação Física. Você chega sabendo o que vai fazer.</p></div>
+      <div class="pain"><span class="n">02</span><h3><q>Meu horário não bate com o da academia.</q></h3><p>Abrimos <b>às 6h e fechamos às 23h</b> de segunda a quinta. Horário livre e sem limite de tempo de permanência.</p></div>
+      <div class="pain"><span class="n">03</span><h3><q>Toda academia cobra matrícula e taxa escondida.</q></h3><p><b>Sem taxa de matrícula</b>, estacionamento gratuito e preço na mesa: os planos estão logo abaixo.</p></div>
+      <div class="pain"><span class="n">04</span><h3><q>Musculação não é pra mim.</q></h3><p>Tudo bem. Tem <b>funcional, natação, hidroginástica, hidroterapia e pilates</b> no mesmo lugar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section class="mods" id="modalidades" aria-labelledby="h-mods">
+  <div class="wrap">
+    <p class="eyebrow">Modalidades</p>
+    <h2 class="h-sec" id="h-mods">Seis jeitos de <em>treinar</em><br>no mesmo endereço</h2>
+    <div class="mod-grid">
+      <article class="mod" data-gal="musculacao"><span class="tag">Força</span><h3>Musculação</h3><p>Treino individualizado com acompanhamento de profissionais de Educação Física.</p><details class="mgd" name="modalidades"><summary class="mod-plus" aria-label="Ver fotos de Musculação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="mg" id="mg-musculacao">
+        <div class="mg-stage">
+          <div class="mg-track" tabindex="0" aria-label="Fotos de Musculação, arraste para o lado">
+          <img src="img/musculacao-1.webp" alt="Aluno fazendo rosca com halteres" width="720" height="900" loading="lazy" decoding="async" style="object-position:center 40%">
+          <img src="img/musculacao-2.webp" alt="Aluno fazendo avanço com halteres" width="720" height="897" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/musculacao-3.webp" alt="Aluna treinando no cabo" width="720" height="1080" loading="lazy" decoding="async" style="object-position:center 35%">
+          </div>
+          <button class="mg-nav prev" type="button" disabled aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="mg-nav next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="mg-foot"><span class="mg-count" aria-live="polite"></span><span class="mg-dots" aria-hidden="true"></span></div>
+      </div></details></article>
+      <article class="mod" data-gal="funcional"><span class="tag">Condicionamento</span><h3>Funcional</h3><p>Aulas de funcional incluídas no plano de musculação.</p><details class="mgd" name="modalidades"><summary class="mod-plus" aria-label="Ver fotos de Funcional"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="mg" id="mg-funcional">
+        <div class="mg-stage">
+          <div class="mg-track" tabindex="0" aria-label="Fotos de Funcional, arraste para o lado">
+          <img src="img/funcional-1.webp" alt="Aluna fazendo salto na caixa" width="720" height="720" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/funcional-2.webp" alt="Aluna correndo na esteira" width="720" height="1080" loading="lazy" decoding="async" style="object-position:center 40%">
+          <img src="img/funcional-3.webp" alt="Aluno levantando barra com anilhas" width="720" height="1080" loading="lazy" decoding="async" style="object-position:center">
+          </div>
+          <button class="mg-nav prev" type="button" disabled aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="mg-nav next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="mg-foot"><span class="mg-count" aria-live="polite"></span><span class="mg-dots" aria-hidden="true"></span></div>
+      </div></details></article>
+      <article class="mod" data-gal="natacao"><span class="tag">Piscina aquecida</span><h3>Natação</h3><p>Escola de natação com dias e horários fixos, a partir dos 8 meses de idade.</p><details class="mgd" name="modalidades"><summary class="mod-plus" aria-label="Ver fotos de Natação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="mg" id="mg-natacao">
+        <div class="mg-stage">
+          <div class="mg-track" tabindex="0" aria-label="Fotos de Natação, arraste para o lado">
+          <img src="img/nat-1.webp" alt="Nadadora em braçada de borboleta na piscina" width="720" height="941" loading="lazy" decoding="async" style="object-position:center 55%">
+          <img src="img/nat-2.webp" alt="Nadador de touca azul em borboleta, vista frontal" width="704" height="1408" loading="lazy" decoding="async" style="object-position:center 45%">
+          <img src="img/nat-3.webp" alt="Nadador em crawl na raia" width="900" height="600" loading="lazy" decoding="async" style="object-position:38% center">
+          </div>
+          <button class="mg-nav prev" type="button" disabled aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="mg-nav next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="mg-foot"><span class="mg-count" aria-live="polite"></span><span class="mg-dots" aria-hidden="true"></span></div>
+      </div></details></article>
+      <article class="mod" data-gal="hidroginastica"><span class="tag">Piscina aquecida</span><h3>Hidroginástica</h3><p>Exercício na água com piscina térmica e aquecida.</p><details class="mgd" name="modalidades"><summary class="mod-plus" aria-label="Ver fotos de Hidroginástica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="mg" id="mg-hidroginastica">
+        <div class="mg-stage">
+          <div class="mg-track" tabindex="0" aria-label="Fotos de Hidroginástica, arraste para o lado">
+          <img src="img/hidroginastica-1.webp" alt="Aluno elevando o joelho dentro da piscina" width="720" height="841" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/hidroginastica-2.webp" alt="Alunas com halteres de espuma na piscina" width="720" height="899" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/hidroginastica-3.webp" alt="Aluna com espaguete na piscina" width="600" height="900" loading="lazy" decoding="async" style="object-position:center">
+          </div>
+          <button class="mg-nav prev" type="button" disabled aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="mg-nav next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="mg-foot"><span class="mg-count" aria-live="polite"></span><span class="mg-dots" aria-hidden="true"></span></div>
+      </div></details></article>
+      <article class="mod" data-gal="hidroterapia"><span class="tag">Piscina aquecida</span><h3>Hidroterapia</h3><p>Atividade na água em piscina térmica. Consulte horários pelo WhatsApp.</p><details class="mgd" name="modalidades"><summary class="mod-plus" aria-label="Ver fotos de Hidroterapia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="mg" id="mg-hidroterapia">
+        <div class="mg-stage mg-wide">
+          <div class="mg-track" tabindex="0" aria-label="Fotos de Hidroterapia, arraste para o lado">
+          <img src="img/hidroterapia-1.webp" alt="Aluna fazendo exercício com cinto flutuador na piscina" width="690" height="518" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/hidroterapia-2.webp" alt="Paciente flutuando com apoio do terapeuta na piscina" width="900" height="600" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/hidroterapia-3.webp" alt="Aluna com cinto flutuador e halteres na água" width="700" height="958" loading="lazy" decoding="async" style="object-position:center 42%">
+          </div>
+          <button class="mg-nav prev" type="button" disabled aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="mg-nav next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="mg-foot"><span class="mg-count" aria-live="polite"></span><span class="mg-dots" aria-hidden="true"></span></div>
+      </div></details></article>
+      <article class="mod" data-gal="pilates"><span class="tag">Postura e controle</span><h3>Pilates</h3><p>Aulas de pilates. Consulte horários e valores pelo WhatsApp.</p><details class="mgd" name="modalidades"><summary class="mod-plus" aria-label="Ver fotos de Pilates"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><div class="mg" id="mg-pilates">
+        <div class="mg-stage">
+          <div class="mg-track" tabindex="0" aria-label="Fotos de Pilates, arraste para o lado">
+          <img src="img/pilates-1.webp" alt="Aluna no aparelho de pilates com as pernas elevadas" width="720" height="1080" loading="lazy" decoding="async" style="object-position:center 45%">
+          <img src="img/pilates-2.webp" alt="Alunos fazendo pilates no reformer" width="720" height="898" loading="lazy" decoding="async" style="object-position:center">
+          <img src="img/pilates-3.webp" alt="Aluna fazendo exercício no reformer" width="720" height="1080" loading="lazy" decoding="async" style="object-position:center 45%">
+          </div>
+          <button class="mg-nav prev" type="button" disabled aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="mg-nav next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="mg-foot"><span class="mg-count" aria-live="polite"></span><span class="mg-dots" aria-hidden="true"></span></div>
+      </div></details></article>
+    </div>
+<script>window.__mgBind&&window.__mgBind();</script>
+
+    <div class="facade">
+      <img src="img/fachada.jpg" alt="Fachada da academia Physical Center" width="840" height="420">
+      <div class="facade-copy">
+        <span class="eyebrow">Estrutura</span>
+        <h3>Vestiários com chuveiro e armários</h3>
+        <p>Vestiários com chuveiros e armários rotativos, estacionamento gratuito e piscina térmica aquecida para as aulas na água.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSO -->
+<section id="incluso" aria-labelledby="h-incl">
+  <div class="wrap incl">
+    <div>
+      <p class="eyebrow">Musculação + funcional</p>
+      <h2 class="h-sec" id="h-incl">Tudo que está <em>incluso</em> no plano</h2>
+      <p class="lead" style="margin-top:22px">Treino individualizado com atendimento de profissionais de Educação Física, de segunda a sábado.</p>
+    </div>
+    <div>
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>De segunda a sábado</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Horário livre</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Sem taxa de matrícula</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Sem limite de tempo para permanência</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Estacionamento gratuito</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Vestiários com chuveiros e armários rotativos</li>
+      </ul>
+      <div class="rules"><b>Para o seu primeiro dia</b>Traga cadeado para o armário. Uso obrigatório de toalha, roupas adequadas e tênis.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="plans" id="planos" aria-labelledby="h-planos">
+  <div class="wrap">
+    <p class="eyebrow">Planos · Musculação + funcional</p>
+    <h2 class="h-sec" id="h-planos">Quanto mais tempo,<br><em>menos você paga</em></h2>
+    <div class="plan-row">
+      <article class="plan"><span class="term">Mensal</span><p class="price">R$140<span>/mês</span></p><p class="save">Sem compromisso de permanência longa.</p></article>
+      <article class="plan"><span class="term">3 meses</span><p class="price">R$120<span>/mês</span></p><p class="save">R$20 a menos por mês que o mensal.</p></article>
+      <article class="plan"><span class="term">6 meses</span><p class="price">R$110<span>/mês</span></p><p class="save">R$30 a menos por mês que o mensal.</p></article>
+      <article class="plan best"><span class="badge">Mais vantajoso</span><span class="term">Anual</span><p class="price">R$99<span>/mês</span></p><p class="save">R$41 a menos por mês: R$492 de economia no ano.</p></article>
+    </div>
+    <p class="fine">*Consulte condições. Valores por mês, referentes a musculação + funcional.</p>
+  </div>
+</section>
+
+<!-- CTA MEIO -->
+<section class="mid" aria-labelledby="h-mid">
+  <svg class="bgchev" viewBox="0 0 300 260" aria-hidden="true" fill="#0B0C0A"><path d="M0 0h70l90 130-90 130H0l90-130z"/><path d="M120 0h70l90 130-90 130h-70l90-130z"/></svg>
+  <div class="wrap">
+    <div>
+      <h2 id="h-mid">Escolheu o plano?<br>Falta só o primeiro treino.</h2>
+      <p>Mande uma mensagem dizendo qual plano e qual unidade preferem. A equipe responde pelo WhatsApp e explica como começar.</p>
+    </div>
+    <div>
+      <a class="btn" href="https://wa.me/5551991973755?text=Ol%C3%A1!%20Quero%20fazer%20minha%20matr%C3%ADcula%20na%20Physical%20Center.%20Qual%20o%20pr%C3%B3ximo%20passo%3F" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+        Quero fazer minha matrícula
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NATAÇÃO -->
+<section class="swim" id="natacao" aria-labelledby="h-swim">
+  <div class="swim-photo">
+    <div class="water"><img src="img/natacao-original.jpg" alt="Nadador em braçada de borboleta na piscina" width="540" height="804" decoding="async"></div>
+    <svg class="foam" aria-hidden="true" preserveAspectRatio="none">
+      <defs><filter id="fb" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+      <path class="sh" filter="url(#fb)"/><path class="glow" filter="url(#fb)"/><path class="crest"/><path class="line"/><g class="spray"></g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="swim-head">
+      <p class="eyebrow">Escola de natação</p>
+      <h2 class="h-sec" id="h-swim">Quer aprender<br>a <em>nadar?</em></h2>
+      <p class="lead" style="margin-top:20px">Nós te ensinamos. Na escola de natação da Physical Center você aprende o passo a passo para começar a nadar, com professores formados em Educação Física do início ao fim.</p>
+    </div>
+    <div class="swim-grid">
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Piscina térmica e aquecida</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>A partir dos 8 meses de idade</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Dias e horários fixos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Recuperação de aulas com agendamento prévio</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Sem taxa de matrícula</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m4 12.5 5 5L20 6.5"/></svg>Valores conforme a quantidade de aulas na semana</li>
+      </ul>
+      <div>
+        <div class="freq" role="table" aria-label="Valores da natação">
+          <div class="freq-head" role="row"><span role="columnheader">Aulas</span><span role="columnheader">Mensal</span><span role="columnheader">Anual</span></div>
+          <div class="freq-r" role="row"><span class="f" role="cell">1x<small>por semana</small></span><span class="v" role="cell">R$130<small>/mês</small></span><span class="v y" role="cell">R$110<small>/mês</small></span></div>
+          <div class="freq-r" role="row"><span class="f" role="cell">2x<small>por semana</small></span><span class="v" role="cell">R$190<small>/mês</small></span><span class="v y" role="cell">R$160<small>/mês</small></span></div>
+          <div class="freq-r" role="row"><span class="f" role="cell">3x<small>por semana</small></span><span class="v" role="cell">R$230<small>/mês</small></span><span class="v y" role="cell">R$200<small>/mês</small></span></div>
+        </div>
+        <p class="fine">*Demais planos, solicite via WhatsApp.</p>
+        <div class="other"><b>Antes da primeira aula:</b> atestado médico (pode ser entregue em até 30 dias). Materiais obrigatórios: touca, óculos, maiô/macaquinho e sunga/bermuda.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="duvidas" aria-labelledby="h-faq">
+  <div class="wrap faq-grid">
+    <div>
+      <p class="eyebrow">Dúvidas comuns</p>
+      <h2 class="h-sec" id="h-faq">Antes de <em>chamar</em> no WhatsApp</h2>
+    </div>
+    <div>
+      <details><summary>Tem taxa de matrícula?</summary><p>Não. Nem na musculação + funcional, nem na natação.</p></details>
+      <details><summary>Posso treinar em qualquer horário?</summary><p>Na musculação o horário é livre e não há limite de tempo de permanência, dentro do horário de funcionamento de cada unidade. Na natação as aulas têm dias e horários fixos.</p></details>
+      <details><summary>O que preciso levar?</summary><p>Na musculação: toalha, roupa adequada, tênis e um cadeado para o armário. Na natação: touca, óculos, maiô/macaquinho ou sunga/bermuda.</p></details>
+      <details><summary>Criança pode fazer natação?</summary><p>Sim, a escola de natação atende a partir dos 8 meses de idade.</p></details>
+      <details><summary>E se eu perder uma aula de natação?</summary><p>Dá para recuperar a aula com agendamento prévio.</p></details>
+      <details><summary>Quanto custam pilates, hidroginástica e hidroterapia?</summary><p>Os valores dessas modalidades são passados pelo WhatsApp. Chame a equipe e informe qual modalidade e unidade preferem.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final" aria-labelledby="h-final">
+  <svg class="chev" viewBox="0 0 400 260" aria-hidden="true" fill="none" stroke="#3a3f33" stroke-width="2"><path d="M10 10 L130 130 L10 250"/><path d="M90 10 L210 130 L90 250"/><path d="M170 10 L290 130 L170 250" stroke="#B5E61D" stroke-width="3"/></svg>
+  <div class="wrap">
+    <h2 id="h-final">A próxima segunda pode ser a <em>última primeira vez.</em></h2>
+    <p class="lead">Fale com a equipe, escolha a unidade mais perto de você e comece com treino acompanhado desde o primeiro dia.</p>
+    <div class="cta-wrap">
+      <a class="btn" href="https://wa.me/5551991973755?text=Ol%C3%A1!%20Quero%20agendar%20meu%20primeiro%20treino%20na%20Physical%20Center." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+        Agendar meu primeiro treino
+      </a>
+      <p class="btn-note">Resposta pelo WhatsApp <b>(51) 99197-3755</b></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="unidades">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:24px">Unidades e horários</p>
+    <div class="units">
+      <article class="unit">
+        <h3>Unidade Rondon</h3>
+        <address>Av. Marechal Rondon, 2290 - Pd. 59<br>Parque Espírito Santo, Cachoeirinha/RS<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Marechal+Rondon,+2290,+Cachoeirinha,+RS" target="_blank" rel="noopener">Abrir no mapa →</a></address>
+        <table class="hours"><caption class="sr-only" style="position:absolute;left:-9999px">Horários da unidade Rondon</caption>
+          <tr><th scope="row">Segunda a quinta</th><td>6h às 23h</td></tr>
+          <tr><th scope="row">Sexta</th><td>6h às 22h</td></tr>
+          <tr><th scope="row">Sábado</th><td>8h às 12h</td></tr>
+        </table>
+        <div class="phones"><a href="tel:+555134696241">(51) 3469-6241</a><a href="tel:+555134387775">(51) 3438-7775</a><span class="br"></span><a class="wa" href="https://wa.me/5551991973755" target="_blank" rel="noopener">WhatsApp (51) 99197-3755</a><span class="br"></span><a class="wa" href="https://wa.me/5551992459190" target="_blank" rel="noopener">WhatsApp (51) 99245-9190</a></div>
+      </article>
+      <article class="unit">
+        <h3>Unidade Missões</h3>
+        <address>Rua Missões, 117 - Pd. 58<br>Vila Vista Alegre, Cachoeirinha/RS<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Miss%C3%B5es,+117,+Cachoeirinha,+RS" target="_blank" rel="noopener">Abrir no mapa →</a></address>
+        <table class="hours"><caption class="sr-only" style="position:absolute;left:-9999px">Horários da unidade Missões</caption>
+          <tr><th scope="row">Segunda a quinta</th><td>6h às 23h</td></tr>
+          <tr><th scope="row">Sexta</th><td>6h às 22h</td></tr>
+          <tr><th scope="row">Sábado</th><td>9h às 16h</td></tr>
+        </table>
+        <div class="phones"><a href="tel:+555134412766">(51) 3441-2766</a><span class="br"></span><a class="wa" href="https://wa.me/5551991973755" target="_blank" rel="noopener">WhatsApp (51) 99197-3755</a><span class="br"></span><a class="wa" href="https://wa.me/5551992459190" target="_blank" rel="noopener">WhatsApp (51) 99245-9190</a></div>
+      </article>
+    </div>
+    <div class="foot-bottom">
+      <a class="logo" href="#topo" aria-label="Voltar ao topo"><img src="img/logo.webp" alt="Physical Center" width="440" height="380"></a>
+      <a class="ig" href="https://www.instagram.com/physicalcenter_academia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@physicalcenter_academia</a>
+      <span>© 2026 Physical Center Academia · Cachoeirinha/RS</span>
+    </div>
+  </div>
+</footer>
+<script>
+/* Tsunami da natação: a água da foto sobe e passa por cima da faixa verde conforme o scroll */
+(function(){
+  var box=document.querySelector('.swim-photo'),mid=document.querySelector('.mid');
+  if(!box||!mid||!('IntersectionObserver' in window))return;
+  var water=box.querySelector('.water'),foam=box.querySelector('.foam');
+  var P={sh:foam.querySelector('.sh'),glow:foam.querySelector('.glow'),crest:foam.querySelector('.crest'),line:foam.querySelector('.line')};
+  var spray=foam.querySelector('.spray'),drops=[];
+  for(var k=0;k<16;k++){var c=document.createElementNS('http://www.w3.org/2000/svg','circle');spray.appendChild(c);
+    drops.push({el:c,dx:(k*0.6180339)%1-0.5,h:((k*0.37)%1),r:1.5+((k*0.73)%1)*3.5,sp:0.6+((k*0.41)%1)*0.9});}
+  var calm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ov=0,W=0,H=0,visible=false,raf=0,N=48,REST=70;
+  function measure(){ov=mid.offsetHeight;box.style.setProperty('--ov',ov+'px');W=box.offsetWidth;H=box.offsetHeight;foam.setAttribute('viewBox','0 0 '+W+' '+H)}
+  function prog(){var vh=window.innerHeight,b=mid.getBoundingClientRect().bottom,p=(vh*0.8-b)/(vh*0.7);p=p<0?0:p>1?1:p;return p}
+  function ease(p){return p*p*(3-2*p)}
+  function frame(t){
+    raf=0;
+    var p=prog(),e=ease(p),ph=calm?0:t*0.0018,mob=W<700;
+    var base=(ov-REST)*(1-e);
+    var crestH=(mob?60:110)*Math.pow(Math.sin(Math.PI*Math.min(1,p*1.15)),0.7)+(mob?22:34)*(1-e);
+    var c=-0.15+1.3*e+(calm?0:0.03*Math.sin(t*0.0011));      /* posição da crista, varre da esquerda p/ direita */
+    var wl=mob?0.42:0.32, wr=wl*0.38;                        /* frente íngreme à direita */
+    var ys=[],poly=[],d='',peakX=0,peakY=1e9;
+    for(var i=0;i<=N;i++){
+      var x=i/N,dx=x-c,w=dx<0?wl:wr,bump=Math.exp(-(dx*dx)/(w*w));
+      var rip=(mob?7:11)*Math.sin(x*Math.PI*6+ph)+(mob?4:6)*Math.sin(x*Math.PI*13-ph*1.7);
+      var y=Math.max(0,base-crestH*bump+rip*(1-bump*0.6));
+      ys.push(y);if(y<peakY){peakY=y;peakX=x}
+      poly.push((x*100).toFixed(2)+'% '+y.toFixed(1)+'px');
+      d+=(i?'L':'M')+(x*W).toFixed(1)+' '+y.toFixed(1);
+    }
+    water.style.clipPath='polygon(0 100%,'+poly.join(',')+',100% 100%)';
+    var dsh='';for(i=0;i<=N;i++)dsh+=(i?'L':'M')+(i/N*W).toFixed(1)+' '+(ys[i]-14).toFixed(1);
+    P.sh.setAttribute('d',dsh);P.glow.setAttribute('d',d);P.crest.setAttribute('d',d);P.line.setAttribute('d',d);
+    var energy=Math.sin(Math.PI*Math.min(1,p*1.15));
+    for(i=0;i<drops.length;i++){var o=drops[i],cyc=((t*0.0006*o.sp)+o.h)%1;
+      if(calm)cyc=o.h;
+      var x=(peakX+o.dx*(mob?0.35:0.25))*W,y=peakY-cyc*(mob?60:95)*energy;
+      o.el.setAttribute('cx',x.toFixed(1));o.el.setAttribute('cy',y.toFixed(1));o.el.setAttribute('r',(o.r*(1-cyc*0.5)).toFixed(2));
+      o.el.setAttribute('opacity',((1-cyc)*0.85*energy).toFixed(2));}
+    var settled=p>=1&&box.getBoundingClientRect().top<-60;
+    if(visible&&!calm&&!settled)raf=requestAnimationFrame(frame);
+  }
+  function kick(){if(!raf)raf=requestAnimationFrame(frame)}
+  measure();box.classList.add('wave-on');kick();
+  new IntersectionObserver(function(en){visible=en[0].isIntersecting;if(visible)kick()},{rootMargin:'120px 0px'}).observe(box);
+  window.addEventListener('scroll',kick,{passive:true});
+  if('ResizeObserver' in window)new ResizeObserver(function(){measure();kick()}).observe(mid);
+  else window.addEventListener('resize',function(){measure();kick()});
+})();
+</script>
+</body>
+</html>
